@@ -1,8 +1,6 @@
 using System.Numerics;
 
-var b = WebApplication.CreateBuilder(args);
-b.Configuration.Sources.Clear();
-var app = b.Build();
+var app = WebApplication.CreateBuilder(args).Build();
 
 app.MapGet("/safarahmed11_gmail_com", (HttpRequest r) =>
 {
@@ -13,10 +11,10 @@ app.MapGet("/safarahmed11_gmail_com", (HttpRequest r) =>
         return Results.Text("NaN");
 
     var a = BigInteger.Parse(x);
-    var c = BigInteger.Parse(y);
-    var g = BigInteger.GreatestCommonDivisor(a, c);
+    var b = BigInteger.Parse(y);
+    var g = BigInteger.GreatestCommonDivisor(a, b);
 
-    return Results.Text((a / g * c).ToString());
+    return Results.Text((a / g * b).ToString());
 });
 
 static bool Natural(string s)
